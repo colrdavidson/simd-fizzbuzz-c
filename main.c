@@ -34,7 +34,7 @@ static void print_256(__m256i v) {
 int main(void) {
 
 	// This is a *lot* of pre-cursor work which boils down to a fairly straightfowrward process
-	// This generates 15 distinct masks (res_masks), and 15 mask-masks (res_vecs),
+	// This generates 15 distinct masks (res_masks), and 15 vecs with values-to-swap (res_vecs),
 	// res_masks determines if the value needs to be swapped with a const, and res_vecs contains
 	// the constant appropriate for that position in the cycle.
 	//
@@ -45,6 +45,8 @@ int main(void) {
 	// The threes and fives masks, read right to left, mark out explicitly,
 	// each multiple of 3 or 5 respectively that needs to be handled. This could be generated,
 	// but it's arguably clearer written as static data, and won't need to change because FizzBuzz
+	//
+	// TODO: Is there a better way to do this that'll just swap in the vec val if it's nonzero?
 
 	__m256i threes[3] = {
 		spread_256(0b00100100),
