@@ -92,7 +92,7 @@ int main(void) {
 	__m256i count = _mm256_loadu_si256((__m256i*)count_arr);
 
 	// Completely ignoring the case where you might want to fizz a buzz that isn't an evenly-divisble-by-8 count
-	// Imagine your own scalar solution to fill in the blanks if you feel so inclined.
+	// Imagine your own scalar/partial-vec solution to fill in the blanks if you feel so inclined.
 	int k = 0;
 	int length = 256 / 8;
 	for (int i = 0; i < length; i++) {

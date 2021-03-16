@@ -1,1 +1,1 @@
-clang -mavx2 -o fizzbuzz main.c
+clang -mavx2 -O3 -o fizzbuzz main.c
